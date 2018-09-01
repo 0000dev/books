@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ category[0].cats  }} Artists{% endblock %}
+{% block title %}{{ category[0].cats  }}{% if curr_page > 1 %}. Page {{curr_page}} {% endif %}{% endblock %}
 
 {% block body %}
 

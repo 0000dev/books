@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ item.name }} Tour and Concert Feedbacks. Tickets and Scedule{% endblock %}
+{% block title %}{{ item.name }} Audiobook and Paperback Reviews{% endblock %}
 
 {% block body %}
 
@@ -108,7 +108,7 @@
 {% if item.schedule.data|length > 0 %}
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<h4>{{item.name}} Tickets and Tour Schedule</h4>	
+			<h4>{{item.name}} Reviews</h4>	
 		</div>
 	</div>
 
@@ -137,7 +137,7 @@
 {% if item.images|length > 0 %}
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<h4>{{item.name}} Concert & Tour Photos</h4>	
+			<h4>{{item.name}}</h4>	
 		</div>
 	</div>
 
@@ -170,7 +170,7 @@
 
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<h4>Fan Reviews</h4>
+			<h4>Readers` Reviews</h4>
 		</div>
 	</div>
 
@@ -285,7 +285,7 @@
 
 <div class="pure-g">
 	<div class="pure-u-1">
-		[Temporary disabled] {{item.name}} needs your feedback
+		[Temporary disabled] Leave Feeback for {{item.name}} 
 	</div>
 </div>
 
@@ -320,28 +320,6 @@
 
 	</div>
 </div>
-
-<script>
-$( document ).ready(function() {
-	$( "input.rating-input" ).click(function() {
-		name=$(this).attr('name');
-		$("input[name='"+name+"']").val(""); // remove value from all radio's (with this name)
-		$("input[name='"+name+"']:checked").val($(this).attr('id')); // add value to checked radio
-	});
-});
-
-$('.tmimage').click(function(){
-	window.open('http://href.li/?http://www.ticketmaster.com/{{item.name|replace({' ':'-'})}}/artist/{{item.tm_id}}', '_blank');
-});
-
-$(".scheduleblock").niceScroll({
- 
-	autohidemode:'leave',
- 
-});
-
-</script>
-
 
 {% endblock %}
 
