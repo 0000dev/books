@@ -108,7 +108,10 @@ Router::route('/search', function() use($controller){
 });
 
 if (false === Router::execute($url)) 
-	echo '404';
+{
+	header("Location: /",true,301);
+	exit;
+}
 
 
 if (ENV == 'dev')
